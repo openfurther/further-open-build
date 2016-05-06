@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- =========================================== -->
+	<!-- Project information -->
+	<!-- =========================================== -->
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.utah.further</groupId>
+	<artifactId>further-open-build</artifactId>
+	<version>1.4.4-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<prerequisites>
+		<maven>3.0.0</maven>
+	</prerequisites>
+
+	<!-- =========================================== -->
+	<!-- Externalized properties -->
+	<!-- =========================================== -->
+
+	<!-- =========================================== -->
+	<!-- Global dependencies -->
+	<!-- =========================================== -->
+
+	<!-- =========================================== -->
+	<!-- Custom profiles - see also settings.xml -->
+	<!-- Note: profiles in this section are not -->
+	<!-- available to child modules - Maven feature; -->
+	<!-- although the m2eclipse one does seem to be. -->
+	<!-- Declare global profiles in settings.xml. -->
+	<!-- =========================================== -->
+
+	<profiles>
+
+		<!-- ############################ -->
+		<!-- OS Specific Profiles -->
+		<!-- ############################ -->
+
+		<profile>
+			<id>windows_profile</id>
+			<activation>
+				<os>
+					<family>windows</family>
+				</os>
+			</activation>
+			<properties>
+				<keystore.location>${java.home}/jre/lib/security/cacerts</keystore.location>
+			</properties>
+		</profile>
+		<profile>
+			<id>unix_profile</id>
+			<activation>
+				<os>
+					<family>unix</family>
+				</os>
+			</activation>
+			<properties>
+				<keystore.location>${java.home}/lib/security/cacerts</keystore.location>
+			</properties>
+		</profile>
+
+	</profiles>
+
+	<!-- =========================================== -->
+	<!-- Modules -->
+	<!-- =========================================== -->
+
+	<modules>
+		<module>further-open-core</module>
+		<module>further-open-osgi</module>
+		<module>further-open-datasources</module>
+		<module>further-open-xquery</module>
+		<module>i2b2-hook</module>
+	</modules>
+
+	<!-- =========================================== -->
+	<!-- Our mailing lists -->
+	<!-- =========================================== -->
+
+	<mailingLists>
+
+		<mailingList>
+			<name>Project Email Distribution List</name>
+			<post>bmi-further@lists.utah.edu</post>
+			<subscribe>further@utah.edu</subscribe>
+			<unsubscribe>further@utah.edu</unsubscribe>
+			<archive>http://www.lists.utah.edu</archive>
+		</mailingList>
+
+		<mailingList>
+			<name>FURTHeR Users List</name>
+			<post>bmi-further@lists.utah.edu</post>
+			<subscribe>further@utah.edu</subscribe>
+			<unsubscribe>further@utah.edu</unsubscribe>
+			<archive>http://www.lists.utah.edu</archive>
+		</mailingList>
+
+		<mailingList>
+			<name>Core Development Team</name>
+			<post>bmi-further-dev@lists.utah.edu</post>
+			<subscribe>further@utah.edu</subscribe>
+			<unsubscribe>further@utah.edu</unsubscribe>
+			<archive>http://www.lists.utah.edu</archive>
+		</mailingList>
+
+		<mailingList>
+			<name>Software Development Team</name>
+			<post>further-software-dev@lists.utah.edu</post>
+			<subscribe>further@utah.edu</subscribe>
+			<unsubscribe>further@utah.edu</unsubscribe>
+			<archive>http://www.lists.utah.edu</archive>
+		</mailingList>
+
+	</mailingLists>
+
+	<!-- =========================================== -->
+	<!-- Software licensing information -->
+	<!-- =========================================== -->
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+
+	<!-- =========================================== -->
+	<!-- Version control information -->
+	<!-- =========================================== -->
+
+	<!-- =========================================== -->
+	<!-- Organization -->
+	<!-- =========================================== -->
+	<organization>
+		<name>Office of the AVP for Health Sci. IT</name>
+		<url>http://healthsciences.utah.edu/avpit/</url>
+	</organization>
+
+	<!-- =========================================== -->
+	<!-- Developers -->
+	<!-- =========================================== -->
+
+	<developers>
+
+		<developer>
+			<id>dustin.schultz</id>
+			<name>N. Dustin Schultz</name>
+			<email>dustin.schultz@utah.edu</email>
+			<roles>
+				<role>Software Engineer</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<id>shan.he</id>
+			<name>Shan He</name>
+			<email>shan.he@utah.edu</email>
+			<roles>
+				<role>Ph.D. Student, Biomedical Informatics</role>
+			</roles>
+		</developer>
+
+	</developers>
+
+</project>
