@@ -19,5 +19,5 @@ if [[ "${FURTHER_PASSWORD}" == "" ]] ; then
 	echo "FURTHER_PASSWORD must be set before proceeding"
 else
 	echo
-	echo "'Run mvn clean install'"
+	echo "Run 'mvn clean install'"
 fi
